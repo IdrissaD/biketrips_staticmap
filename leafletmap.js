@@ -7,7 +7,7 @@ var osm_layer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 	});
 
 
-var mymap = L.map('mapid').setView([45.757523270000576, 4.831581115722656], 5);
+var mymap = L.map('mapid').setView([49.49544809215964, 4.9706268310546875], 5);
 
 
 var routesLayer = L.geoJson(null, {
