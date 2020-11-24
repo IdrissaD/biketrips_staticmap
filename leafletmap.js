@@ -44,26 +44,26 @@ var list_files = [
 //console.log(list_files);
 
 // Loop on files URL, conversion to Leaflet objects
-/*
+
 for (var i = 0; i< list_files.length; i+= 1) {
     extension = list_files[i].split('.').pop()
     
     if (extension == 'kml') {
-        omnivore.kml(list_files[i], null, routesLayer, style).addTo(mymap)}
+        omnivore.kml(list_files[i], null, routesLayer).addTo(mymap)}
 
     else if (extension == 'gpx') {
-        omnivore.gpx(list_files[i], null, routesLayer, style).addTo(mymap)}
+        omnivore.gpx(list_files[i], null, routesLayer).addTo(mymap)}
 
     else if (extension == 'geojson') {
-        omnivore.geojson(list_files[i], null, routesLayer, style).addTo(mymap)}
-};*/
+        omnivore.geojson(list_files[i], null, routesLayer).addTo(mymap)}
+};
 
 
 // Building of a title div
 var title = L.control({position: 'topright'});
 
 title.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'title'); // create a div with a class "info"
+    var div = L.DomUtil.create('div', 'title'); // create a div with a class "title"
     div.innerHTML = '<h4>Tracés de mes voyages à vélo</h4>';
     return div;
 };
