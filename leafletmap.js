@@ -12,13 +12,12 @@ var mymap = L.map('mapid').setView([49.49544809215964, 4.9706268310546875], 5);
 
 var routesLayer = L.geoJson(null, {
         onEachFeature(feature, layer)
-        {layer.bindPopup('<p><b>' + feature.properties.name + '</b></p><p>'+ parseFloat(turf.length(feature.geometry, {units: 'kilometers'})).toFixed(0) + ' km</p>')}
-    })
+        {layer.bindPopup('<p><b>' + feature.properties.name + '</b></p><p>'+ parseFloat(turf.length(feature.geometry, {units: 'kilometers'})).toFixed(0) + ' km</p>')},
+        style:function(feature) {
+            return {color: "green"}
+        }
+    });
 
-// All the geo are green
-var style = function(geo) {
-    return {color: "green"}
-};
 
 // Definition of all the files URL
 var list_files = [
