@@ -15,6 +15,10 @@ var routesLayer = L.geoJson(null, {
         {layer.bindPopup('<p><b>' + feature.properties.name + '</b></p><p>'+ parseFloat(turf.length(feature.geometry, {units: 'kilometers'})).toFixed(0) + ' km</p>')}
     })
 
+// All the geo are green
+var style = function(geo) {
+    return {color: "green"}
+};
 
 // Definition of all the files URL
 var list_files = [
@@ -45,13 +49,13 @@ for (var i = 0; i< list_files.length; i+= 1) {
     extension = list_files[i].split('.').pop()
     
     if (extension == 'kml') {
-        omnivore.kml(list_files[i], null, routesLayer).addTo(mymap)}
+        omnivore.kml(list_files[i], null, routesLayer, style).addTo(mymap)}
 
     else if (extension == 'gpx') {
-        omnivore.gpx(list_files[i], null, routesLayer).addTo(mymap)}
+        omnivore.gpx(list_files[i], null, routesLayer, style).addTo(mymap)}
 
     else if (extension == 'geojson') {
-        omnivore.geojson(list_files[i], null, routesLayer).addTo(mymap)}
+        omnivore.geojson(list_files[i], null, routesLayer, style).addTo(mymap)}
 };
 
 
