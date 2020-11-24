@@ -45,6 +45,7 @@ var list_files = [
 //console.log(list_files);
 
 // Loop on files URL, conversion to Leaflet objects
+/*
 for (var i = 0; i< list_files.length; i+= 1) {
     extension = list_files[i].split('.').pop()
     
@@ -56,7 +57,7 @@ for (var i = 0; i< list_files.length; i+= 1) {
 
     else if (extension == 'geojson') {
         omnivore.geojson(list_files[i], null, routesLayer, style).addTo(mymap)}
-};
+};*/
 
 
 // Building of a title div
@@ -68,5 +69,6 @@ title.onAdd = function (map) {
     return div;
 };
 
+L.control.scale().addTo(mymap);
 title.addTo(mymap);
 osm_layer.addTo(mymap);
